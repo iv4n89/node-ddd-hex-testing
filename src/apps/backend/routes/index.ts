@@ -24,7 +24,7 @@ export function validateReqSchema(req: Request, res: Response, next: NextFunctio
         return next();
     }
 
-    const errors = validationErrors.array().map((err: ValidationError) => ({ [err.type]: err.msg }));
+    const errors = validationErrors.array().map((err: ValidationError) => ({ [(<any>err).path]: err.msg }));
 
     return res.status(httpStatus.UNPROCESSABLE_ENTITY).json({
         errors

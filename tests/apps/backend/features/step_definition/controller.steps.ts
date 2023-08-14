@@ -31,6 +31,10 @@ Then('the response should be empty', () => {
     assert.deepStrictEqual(_response.body, {});
 });
 
+Then('the response body should contain {string} error', async (errorName: string) => {
+    assert(_response.body.errors.some(error => Object.keys(error).includes(errorName)));
+});
+
 BeforeAll(() => {
     application = new BackendApp();
     application.start().catch(console.error);
