@@ -16,7 +16,9 @@ export class UserPutController implements Controller {
             await userCreator.run(req.body);
             res.status(httpStatus.CREATED).send();
         } catch (err) {
-            res.status(httpStatus.INTERNAL_SERVER_ERROR).send({ err: err.message });
+            if (err instanceof Error) {
+                res.status(httpStatus.INTERNAL_SERVER_ERROR).send({ err: err.message });
+            }
         }
     }
 

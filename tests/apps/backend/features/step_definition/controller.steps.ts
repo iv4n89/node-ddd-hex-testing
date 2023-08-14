@@ -32,7 +32,7 @@ Then('the response should be empty', () => {
 });
 
 Then('the response body should contain {string} error', async (errorName: string) => {
-    assert(_response.body.errors.some(error => Object.keys(error).includes(errorName)));
+    assert(_response.body.errors.some((error: { [field: string]: string }) => Object.keys(error).includes(errorName)));
 });
 
 BeforeAll(() => {

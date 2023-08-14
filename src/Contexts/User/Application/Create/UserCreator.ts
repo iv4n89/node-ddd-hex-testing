@@ -1,8 +1,4 @@
 import { User } from "../../Domain/User";
-import { UserEmail } from "../../Domain/UserEmail";
-import { UserId } from "../../Domain/UserId";
-import { UserName } from "../../Domain/UserName";
-import { UserPassword } from "../../Domain/UserPassword";
 import { UserRepository } from "../../Domain/UserRepository";
 
 export class UserCreator {

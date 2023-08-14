@@ -45,7 +45,7 @@ export class Server {
         });
     }
 
-    getHttpServer(): http.Server {
+    getHttpServer(): http.Server | undefined {
         return this.httpServer;
     }
 

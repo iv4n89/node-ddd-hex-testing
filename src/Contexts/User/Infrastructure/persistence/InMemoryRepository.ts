@@ -1,3 +1,4 @@
+import { Nullable } from "../../../Shared/Infrastructure/Nullable";
 import { User } from "../../Domain/User";
 import { UserId } from "../../Domain/UserId";
 import { UserRepository } from "../../Domain/UserRepository";
@@ -21,7 +22,7 @@ export class InMemoryRepository implements UserRepository {
             resolve(inMemoryUsers);
         });
     }
-    async findOne(userId: UserId): Promise<User> {
+    async findOne(userId: UserId): Promise<Nullable<User>> {
         return new Promise((resolve, reject) => {
             if (!inMemoryUsers.some(user => user.id === userId)) {
                 resolve(null);
