@@ -1,6 +1,8 @@
-import { Router } from "express";
+import { NextFunction, Request, Response, Router } from "express";
 import { register as statusRoute } from './status.route';
 import { register as userRoute } from './user.route';
+import { ValidationError, validationResult } from 'express-validator';
+import httpStatus from "http-status";
 
 export function registerRoutes(router: Router) {
     // const routes = glob.sync(__dirname + './**/*.route.*', { posix: true, dotRelative: true });
@@ -15,3 +17,16 @@ export function registerRoutes(router: Router) {
 //     const route = require(routePath);
 //     route.register(router);
 // }
+
+export function validateReqSchema(req: Request, res: Response, next: NextFunction) {
+    const validationErrors = validationResult(req);
+    if (validationErrors.isEmpty()) {
+        return next();
+    }
+
+    const errors = validationErrors.array().map((err: ValidationError) => ({ [err.type]: err.msg }));
+
+    return res.status(httpStatus.UNPROCESSABLE_ENTITY).json({
+        errors
+    });
+}
