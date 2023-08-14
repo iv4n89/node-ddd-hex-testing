@@ -11,9 +11,8 @@
     "dev:backend": "ts-node-dev --ignore-watch node_modules ./src/apps/backend/start.ts",
     "test": "npm run test:features",
     "test:features": "NODE_ENV=test cucumber-js -p backend",
-    "build": "npm run build:clean && npm run build:tsc && npm run build:di",
+    "build": "npm run build:clean && npm run build:tsc",
     "build:tsc": "tsc -p tsconfig.prod.json",
-    "build:di": "copy 'src/**/*.{json,yaml,html,png}' dist/src",
     "build:clean": "rm -r dist; exit 0"
   },
   "keywords": [],
