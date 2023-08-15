@@ -11,7 +11,7 @@ type UserPutRequest = {
 };
 
 export class UserPutController implements Controller {
-    async run(req: Request<{},{}, UserPutRequest, {}>, res: Response): Promise<void> {
+    async run(req: Request<Record<string, unknown>,Record<string, unknown>, UserPutRequest, Record<string, unknown>>, res: Response): Promise<void> {
         try {
             await userCreator.run(req.body);
             res.status(httpStatus.CREATED).send();

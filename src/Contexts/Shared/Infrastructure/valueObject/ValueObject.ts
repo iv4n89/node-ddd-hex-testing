@@ -1,6 +1,6 @@
 import { InvalidArgumentError } from "../InvalidArgumentError";
 
-export type Primitives = String | string | Boolean | boolean | Number | number | Date;
+export type Primitives = string | string | boolean | boolean | number | number | Date;
 
 export abstract class ValueObject<T extends Primitives> {
     readonly value;

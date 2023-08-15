@@ -12,11 +12,12 @@ export class UserRepositoryMock implements UserRepository {
     findAll(): Promise<User[]> {
         throw new Error("Method not implemented.");
     }
-    findOne(userId: UserId): Promise<Nullable<User>> {
-        throw new Error("Method not implemented.");
+    async findOne(userId: UserId): Promise<Nullable<User>> {
+        console.log(`${userId}`);
+        throw Error('Not implemented');
     }
-    delete(userId: UserId): Promise<void> {
-        throw new Error("Method not implemented.");
+    async delete(userId: UserId): Promise<void> {
+        console.log(`${userId}`);
     }
 
     async save(user: User): Promise<void> {

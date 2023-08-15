@@ -23,7 +23,7 @@ export class InMemoryRepository implements UserRepository {
         });
     }
     async findOne(userId: UserId): Promise<Nullable<User>> {
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
             if (!inMemoryUsers.some(user => user.id === userId)) {
                 resolve(null);
             }

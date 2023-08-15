@@ -24,6 +24,7 @@ export function validateReqSchema(req: Request, res: Response, next: NextFunctio
         return next();
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const errors = validationErrors.array().map((err: ValidationError) => ({ [(<any>err).path]: err.msg }));
 
     return res.status(httpStatus.UNPROCESSABLE_ENTITY).json({
