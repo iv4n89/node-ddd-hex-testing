@@ -1,5 +1,5 @@
-import { InvalidArgumentError } from "../../Shared/Infrastructure/InvalidArgumentError";
-import { StringValueObject } from "../../Shared/Infrastructure/valueObject/StringValueObject";
+import { InvalidArgumentError } from "@contexts/Shared/Infrastructure/InvalidArgumentError";
+import { StringValueObject } from "@contexts/Shared/Infrastructure/valueObject/StringValueObject";
 
 export class UserName extends StringValueObject {
     protected ensureChain(value: string): void {

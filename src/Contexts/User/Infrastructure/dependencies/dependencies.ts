@@ -1,5 +1,5 @@
-import { UserCreator } from "../../Application/Create/UserCreator";
-import { UserRepository } from "../../Domain/UserRepository";
+import { UserCreator } from "@contexts/User/Application/Create/UserCreator";
+import { UserRepository } from "@contexts/User/Domain/UserRepository";
 import { InMemoryRepository } from "../persistence/InMemoryRepository";
 
 const userRepository: UserRepository = new InMemoryRepository();

@@ -1,6 +1,7 @@
 /* eslint-disable camelcase */
 const common = [
-    '--require-module ts-node/register'
+    '--require-module ts-node/register',
+    '--require-module tsconfig-paths/register'
 ];
 
 const backend = [

@@ -1,7 +1,7 @@
-import { Nullable } from "../../../Shared/Infrastructure/Nullable";
-import { User } from "../../Domain/User";
-import { UserId } from "../../Domain/UserId";
-import { UserRepository } from "../../Domain/UserRepository";
+import { Nullable } from "@contexts/Shared/Infrastructure/Nullable";
+import { User } from "@contexts/User/Domain/User";
+import { UserId } from "@contexts/User/Domain/UserId";
+import { UserRepository } from "@contexts/User/Domain/UserRepository";
 
 let inMemoryUsers: Array<User> = [];
 

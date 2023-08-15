@@ -3,7 +3,7 @@ import assert from "node:assert";
 import { AfterAll, BeforeAll, Given, Then } from '@cucumber/cucumber';
 import request from 'supertest';
 
-import { BackendApp } from '../../../../../src/apps/backend/BackendApp';
+import { BackendApp } from '@apps/backend/BackendApp';
 
 let _request: request.Test;
 let application: BackendApp;
