@@ -1,0 +1,11 @@
+52b9a1125e8c06eb380531d1e45b1a77
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.FakeUuuid = void 0;
+const FakerCreator_1 = require("./FakerCreator");
+class FakeUuuid {
+    static random() {
+        return FakerCreator_1.FakerCreator.random().datatype.uuid();
+    }
+}
+exports.FakeUuuid = FakeUuuid;

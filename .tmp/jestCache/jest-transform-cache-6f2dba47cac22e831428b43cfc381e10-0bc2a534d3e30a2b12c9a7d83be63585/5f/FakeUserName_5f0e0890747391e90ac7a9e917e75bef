@@ -1,0 +1,31 @@
+068eb352520f4fc752e18a73e556155d
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.FakeUserName = void 0;
+const UserName_1 = require("@src/Contexts/User/Domain/UserName");
+const FakeInteger_1 = require("@tests/contexts/shared/FakeInteger");
+const FakerCreator_1 = require("@tests/contexts/shared/FakerCreator");
+const FakeWord_1 = require("@tests/contexts/shared/FakeWord");
+class FakeUserName {
+    static create(value) {
+        return new UserName_1.UserName(value);
+    }
+    static random() {
+        return this.create(FakerCreator_1.FakerCreator.random().name.firstName());
+    }
+    static invalidName(caseName) {
+        switch (caseName) {
+            case 'type':
+                return FakeInteger_1.FakeInteger.random();
+            case 'length':
+                return FakeWord_1.FakeWord.random({ minLength: 20, maxLength: 30 });
+            case 'empty':
+                return '';
+            case 'undefined':
+                return undefined;
+            default:
+                break;
+        }
+    }
+}
+exports.FakeUserName = FakeUserName;

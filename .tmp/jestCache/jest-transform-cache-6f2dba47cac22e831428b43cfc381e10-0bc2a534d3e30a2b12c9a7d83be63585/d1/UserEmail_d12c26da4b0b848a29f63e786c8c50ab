@@ -1,0 +1,18 @@
+56e59bcff09932b5461246abce37a9e6
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.UserEmail = void 0;
+const InvalidArgumentError_1 = require("@contexts/Shared/Infrastructure/InvalidArgumentError");
+const StringValueObject_1 = require("@contexts/Shared/Infrastructure/valueObject/StringValueObject");
+class UserEmail extends StringValueObject_1.StringValueObject {
+    ensureChain(value) {
+        super.ensureChain(value);
+        this.ensureIsAnEmail(value);
+    }
+    ensureIsAnEmail(value) {
+        if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g.test(value)) {
+            throw new InvalidArgumentError_1.InvalidArgumentError(`The email [${value}] has not a valid email format`);
+        }
+    }
+}
+exports.UserEmail = UserEmail;

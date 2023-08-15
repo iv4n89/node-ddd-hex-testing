@@ -1,0 +1,15 @@
+6799d37e3fd04eb2ac3ccf88c420ad43
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.FakeUserId = void 0;
+const UserId_1 = require("@contexts/User/Domain/UserId");
+const FakeUuid_1 = require("@contexts-test/shared/FakeUuid");
+class FakeUserId {
+    static create(value) {
+        return new UserId_1.UserId(value);
+    }
+    static random() {
+        return this.create(FakeUuid_1.FakeUuuid.random());
+    }
+}
+exports.FakeUserId = FakeUserId;

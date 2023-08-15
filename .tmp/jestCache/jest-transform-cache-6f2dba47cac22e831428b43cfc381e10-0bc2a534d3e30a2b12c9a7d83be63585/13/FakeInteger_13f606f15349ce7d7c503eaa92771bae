@@ -1,0 +1,11 @@
+27fa051254aeee5e1f859d2a5017d61d
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.FakeInteger = void 0;
+const FakerCreator_1 = require("./FakerCreator");
+class FakeInteger {
+    static random(max) {
+        return FakerCreator_1.FakerCreator.random().datatype.number(max);
+    }
+}
+exports.FakeInteger = FakeInteger;

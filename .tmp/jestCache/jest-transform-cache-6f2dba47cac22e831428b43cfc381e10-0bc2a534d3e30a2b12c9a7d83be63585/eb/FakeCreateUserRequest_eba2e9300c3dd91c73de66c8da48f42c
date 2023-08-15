@@ -1,0 +1,30 @@
+70e1677626ac15cb65575a4c3c823890
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.FakeCreateUserRequest = void 0;
+const FakeUserId_1 = require("../../Shared/domain/Users/FakeUserId");
+const FakeUserEmail_1 = require("../domain/FakeUserEmail");
+const FakeUserName_1 = require("../domain/FakeUserName");
+const FakeUserPassword_1 = require("../domain/FakeUserPassword");
+class FakeCreateUserRequest {
+    static create(id, name, email, password) {
+        return {
+            id: id.value,
+            name: id.value,
+            email: email.value,
+            password: password.value
+        };
+    }
+    static random() {
+        return this.create(FakeUserId_1.FakeUserId.random(), FakeUserName_1.FakeUserName.random(), FakeUserEmail_1.FakeUserEmail.random(), FakeUserPassword_1.FakeUserPassword.random());
+    }
+    static invalidRequest() {
+        return {
+            id: FakeUserId_1.FakeUserId.random().value,
+            name: FakeUserName_1.FakeUserName.invalidName('type'),
+            email: FakeUserEmail_1.FakeUserEmail.invalid('format'),
+            password: FakeUserPassword_1.FakeUserPassword.invalid('format')
+        };
+    }
+}
+exports.FakeCreateUserRequest = FakeCreateUserRequest;

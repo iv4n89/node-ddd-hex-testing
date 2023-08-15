@@ -9,8 +9,8 @@ export class UserName extends StringValueObject {
     }
 
     private ensureNameHasMoreThan5Chars(value: string) {
-        if (value.length < 5) {
-            throw new InvalidArgumentError(`The name [${value}] has to be more than 5 characters`);
+        if (value.length < 2) {
+            throw new InvalidArgumentError(`The name [${value}] has to be more than 2 characters`);
         }
     }
 

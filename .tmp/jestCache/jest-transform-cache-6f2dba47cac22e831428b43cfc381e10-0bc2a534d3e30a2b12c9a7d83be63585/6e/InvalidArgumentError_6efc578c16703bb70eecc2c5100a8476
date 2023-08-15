@@ -1,0 +1,7 @@
+b277a1af5b49ac7d5cdcf88c29635af3
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.InvalidArgumentError = void 0;
+class InvalidArgumentError extends Error {
+}
+exports.InvalidArgumentError = InvalidArgumentError;
