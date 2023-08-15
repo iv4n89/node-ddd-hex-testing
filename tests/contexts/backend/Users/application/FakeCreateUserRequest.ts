@@ -1,7 +1,7 @@
-import { UserEmail } from "@src/Contexts/User/Domain/UserEmail";
-import { UserId } from "@src/Contexts/User/Domain/UserId";
-import { UserName } from "@src/Contexts/User/Domain/UserName";
-import { UserPassword } from "@src/Contexts/User/Domain/UserPassword";
+import { UserEmail } from "@contexts/User/Domain/UserEmail";
+import { UserId } from "@contexts/User/Domain/UserId";
+import { UserName } from "@contexts/User/Domain/UserName";
+import { UserPassword } from "@contexts/User/Domain/UserPassword";
 import { FakeUserId } from "../../Shared/domain/Users/FakeUserId";
 import { FakeUserEmail } from "../domain/FakeUserEmail";
 import { FakeUserName } from "../domain/FakeUserName";

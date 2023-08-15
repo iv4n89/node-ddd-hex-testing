@@ -1,5 +1,5 @@
-import { Nullable } from "@src/Contexts/Shared/Infrastructure/Nullable";
-import { UserName } from "@src/Contexts/User/Domain/UserName";
+import { Nullable } from "@contexts/Shared/Infrastructure/Nullable";
+import { UserName } from "@contexts/User/Domain/UserName";
 import { FakeInteger } from "@tests/contexts/shared/FakeInteger";
 import { FakerCreator } from "@tests/contexts/shared/FakerCreator";
 import { FakeWord } from "@tests/contexts/shared/FakeWord";

@@ -4,10 +4,13 @@
     "module": "commonjs",
     "rootDir": ".",
     "moduleResolution": "Node",
-    "baseUrl": "src",
+    "baseUrl": ".",
     "paths": {
-      "@contexts/*": ["Contexts/*"],
-      "@apps/*": ["apps/*"],
+      "@contexts/*": ["src/Contexts/*"],
+      "@apps/*": ["src/apps/*"],
+      "@tests/*": ["tests/*"],
+      "@contexts-test/*": ["tests/contexts/*"],
+      "@apps-test/*": ["tests/apps/*"]
     },                                     
     "resolveJsonModule": true,                       
     "sourceMap": false,

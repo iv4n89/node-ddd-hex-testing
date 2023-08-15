@@ -1,7 +1,7 @@
-import { Nullable } from "@src/Contexts/Shared/Infrastructure/Nullable";
-import { User } from "@src/Contexts/User/Domain/User";
-import { UserId } from "@src/Contexts/User/Domain/UserId";
-import { UserRepository } from "@src/Contexts/User/Domain/UserRepository";
+import { Nullable } from "@contexts/Shared/Infrastructure/Nullable";
+import { User } from "@contexts/User/Domain/User";
+import { UserId } from "@contexts/User/Domain/UserId";
+import { UserRepository } from "@contexts/User/Domain/UserRepository";
 
 export class UserRepositoryMock implements UserRepository {
     private readonly mockSave;
