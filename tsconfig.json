@@ -4,14 +4,10 @@
     "module": "commonjs",
     "rootDir": ".",
     "moduleResolution": "Node",
-    "baseUrl": ".",
+    "baseUrl": "src",
     "paths": {
-      "@src/*": ["src/*"],
-      "@tests/*": ["tests/*"],
-      "@contexts/*": ["src/Contexts/*"],
-      "@apps/*": ["src/apps/*"],
-      "@contexts-test/*": ["tests/contexts/*"],
-      "@apps-test/*": ["tests/apps/*"]
+      "@contexts/*": ["Contexts/*"],
+      "@apps/*": ["apps/*"],
     },                                     
     "resolveJsonModule": true,                       
     "sourceMap": false,
@@ -23,5 +19,7 @@
     "noImplicitAny": true,
     "noUnusedLocals": true,
     "skipLibCheck": true
-  }
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", ".vscode"]
 }

@@ -1,7 +1,0 @@
-c0b11d06e3b16122ea28fdb20bed4d75
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.AggregateRoot = void 0;
-class AggregateRoot {
-}
-exports.AggregateRoot = AggregateRoot;
