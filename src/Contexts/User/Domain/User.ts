@@ -1,4 +1,4 @@
-import { AggregateRoot } from "@contexts/Shared/Domain/AggregateRoot";
+import { AggregateRoot } from "../../Shared/Domain/AggregateRoot";
 import { UserEmail } from "./UserEmail";
 import { UserId } from "./UserId";
 import { UserName } from "./UserName";

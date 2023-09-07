@@ -1,4 +1,4 @@
-import { Nullable } from "@contexts/Shared/Infrastructure/Nullable";
+import { Nullable } from "../../Shared/Domain/Nullable";
 import { User } from "./User";
 import { UserId } from "./UserId";
 

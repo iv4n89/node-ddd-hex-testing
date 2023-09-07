@@ -1,6 +1,6 @@
 import { FakerCreator } from "./FakerCreator";
 
-export class FakeUuuid {
+export class FakeUuid {
     static random(): string {
         return FakerCreator.random().datatype.uuid();
     }

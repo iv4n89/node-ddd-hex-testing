@@ -1,6 +1,6 @@
-import { InvalidArgumentError } from "./InvalidArgumentError";
-import { StringValueObject } from "./valueObject/StringValueObject";
 import validate from 'uuid-validate';
+import { InvalidArgumentError } from '../InvalidArgumentError';
+import { StringValueObject } from './StringValueObject';
 
 export class Uuuid extends StringValueObject {
 

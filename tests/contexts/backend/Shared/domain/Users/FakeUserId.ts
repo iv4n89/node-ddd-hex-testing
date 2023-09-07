@@ -1,5 +1,5 @@
 import { UserId } from "@contexts/User/Domain/UserId";
-import { FakeUuuid } from "@contexts-test/shared/FakeUuid";
+import { FakeUuid } from "@contexts-test/shared/FakeUuid";
 
 export class FakeUserId {
     static create(value: string): UserId {
@@ -7,6 +7,6 @@ export class FakeUserId {
     }
 
     static random(): UserId {
-        return this.create(FakeUuuid.random());
+        return this.create(FakeUuid.random());
     }
 }
