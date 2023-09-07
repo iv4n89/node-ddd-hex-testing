@@ -4,10 +4,13 @@ import { AfterAll, BeforeAll, Given, Then } from '@cucumber/cucumber';
 import request from 'supertest';
 
 import { BackendApp } from '@apps/backend/BackendApp';
+import { EnvironmentArranger } from "@tests/contexts/shared/infrastructure/arranger/EnvironmentArranger";
+import { arranger } from "@tests/contexts/shared/infrastructure/dependencies/depenencies";
 
 let _request: request.Test;
 let application: BackendApp;
 let _response: request.Response;
+let environmentArranger: EnvironmentArranger;
 
 Given('I send a GET request to {string}', (route: string) => {
     _request = request(application.httpServer).get(route);
@@ -35,11 +38,15 @@ Then('the response body should contain {string} error', async (errorName: string
     assert(_response.body.errors.some((error: { [field: string]: string }) => Object.keys(error).includes(errorName)));
 });
 
-BeforeAll(() => {
+BeforeAll(async () => {
+    environmentArranger = arranger;
+    await environmentArranger.arrange();
     application = new BackendApp();
-    application.start().catch(console.error);
+    await application.start();
 });
 
-AfterAll(() => {
-    application.stop().catch(console.error);
+AfterAll(async () => {
+    await environmentArranger.arrange();
+    await environmentArranger.close();
+    await application.stop();
 })
