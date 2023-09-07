@@ -5,7 +5,7 @@ import request from 'supertest';
 
 import { BackendApp } from '@apps/backend/BackendApp';
 import { EnvironmentArranger } from "@tests/contexts/shared/infrastructure/arranger/EnvironmentArranger";
-import { arranger } from "@tests/contexts/shared/infrastructure/dependencies/depenencies";
+import { arranger } from "@tests/contexts/shared/infrastructure/dependencies/dependencies";
 
 let _request: request.Test;
 let application: BackendApp;
