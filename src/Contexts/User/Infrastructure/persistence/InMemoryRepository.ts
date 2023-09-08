@@ -1,11 +1,32 @@
 import { Nullable } from "@contexts/Shared/Domain/Nullable";
 import { User } from "@contexts/User/Domain/User";
 import { UserId } from "@contexts/User/Domain/UserId";
-import { UserRepository } from "@contexts/User/Domain/UserRepository";
+import { SearchCriteria, UserRepository } from "@contexts/User/Domain/UserRepository";
 
 let inMemoryUsers: Array<User> = [];
 
 export class InMemoryRepository implements UserRepository {
+    search(criteria: SearchCriteria): Promise<Nullable<User[]>> {
+        return new Promise((resolve) => {
+            const result = inMemoryUsers.filter(user => {
+                if (criteria.id) {
+                    return user.id === criteria.id;
+                }
+                if (criteria.name) {
+                    return user.name.value.includes(criteria.name.value);
+                }
+                if (criteria.email) {
+                    return user.email === criteria.email;
+                }
+            });
+
+            if (!resolve.length) {
+                resolve(null);
+            }
+
+            resolve(result);
+        })
+    }
 
     async save(user: User): Promise<void> {
         const existingUser = await this.findOne(user.id);

@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Nullable } from "@contexts/Shared/Domain/Nullable";
 import { MongoRepository } from "@contexts/Shared/Infrastructure/persistence/mongo/MongoRepository";
 import { User } from "@contexts/User/Domain/User";
 import { UserId } from "@contexts/User/Domain/UserId";
-import { UserRepository } from "@contexts/User/Domain/UserRepository";
+import { SearchCriteria, UserRepository } from "@contexts/User/Domain/UserRepository";
 
 interface UserDocument extends Document {
     _id: string;
@@ -12,6 +13,9 @@ interface UserDocument extends Document {
 }
 
 export class MongoUserRepository extends MongoRepository<User> implements UserRepository {
+    search(criteria: SearchCriteria): Promise<Nullable<User[]>> {
+        return {} as Promise<Nullable<User[]>>;
+    }
     protected collectionName(): string {
         return 'users';
     }
