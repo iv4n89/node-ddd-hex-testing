@@ -60,8 +60,10 @@
     "glob": "^10.3.3",
     "helmet": "^7.0.0",
     "http-status": "^1.6.2",
-    "mongodb": "^6.0.0",
+    "mongodb": "^5.2.0",
+    "pg": "^8.11.3",
     "ts-node": "^10.9.1",
+    "typeorm": "^0.3.17",
     "uuid": "^9.0.0",
     "uuid-validate": "^0.0.3"
   }

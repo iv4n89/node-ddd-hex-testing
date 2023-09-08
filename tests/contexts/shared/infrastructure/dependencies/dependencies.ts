@@ -1,5 +1,5 @@
-import { mongoClient } from "@contexts/User/Infrastructure/dependencies/dependencies";
+import { dataSource } from "@contexts/User/Infrastructure/dependencies/dependencies";
 import { EnvironmentArranger } from "../arranger/EnvironmentArranger";
-import { MongoEnvironmentArranger } from "../mongo/ MongoEnvironmentArranger";
+import { TypeOrmEnvironmentArranger } from "../typeorm/TypeOrmEnvironmentArranger";
 
-export const arranger: EnvironmentArranger = new MongoEnvironmentArranger(mongoClient);
+export const arranger: EnvironmentArranger = new TypeOrmEnvironmentArranger(dataSource);

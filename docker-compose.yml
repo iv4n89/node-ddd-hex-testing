@@ -10,3 +10,17 @@ services:
       - 27017
     ports:
       - 27017:27017
+
+  postgres:
+    image: postgres:alpine
+    environment:
+      - POSTGRES_PASSWORD=secr3t!
+      - POSTGRES_DB=hex
+      - POSTGRES_USER=root
+    restart: always
+    volumes:
+      - ./db_data:/var/lib/postgresql/data
+    expose:
+      - 5432
+    ports:
+      - 5432:5432
