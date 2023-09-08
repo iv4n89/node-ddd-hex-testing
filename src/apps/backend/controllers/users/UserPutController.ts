@@ -1,7 +1,7 @@
+import { userCreator } from "@contexts/User/Infrastructure/dependencies/dependencies";
 import { Request, Response } from "express";
-import { Controller } from "./Controller";
-import { userCreator } from "../../../Contexts/User/Infrastructure/dependencies/dependencies";
 import httpStatus from 'http-status';
+import { Controller } from "../Controller";
 
 type UserPutRequest = {
     id: string;

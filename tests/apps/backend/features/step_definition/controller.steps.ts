@@ -1,11 +1,12 @@
 /* eslint-disable no-console */
-import assert from "node:assert";
 import { AfterAll, BeforeAll, Given, Then } from '@cucumber/cucumber';
+import assert from "node:assert";
 import request from 'supertest';
 
 import { BackendApp } from '@apps/backend/BackendApp';
 import { EnvironmentArranger } from "@tests/contexts/shared/infrastructure/arranger/EnvironmentArranger";
 import { arranger } from "@tests/contexts/shared/infrastructure/dependencies/dependencies";
+import { createFakeUsers } from '../utils/utils';
 
 let _request: request.Test;
 let application: BackendApp;
@@ -38,9 +39,30 @@ Then('the response body should contain {string} error', async (errorName: string
     assert(_response.body.errors.some((error: { [field: string]: string }) => Object.keys(error).includes(errorName)));
 });
 
+// Find
+
+Then('the response should not be empty', () => {
+    assert.strict.notDeepEqual(_response.body, {});
+})
+
+Then('the reponse body should be an array with length more than {int}', (lengh: number) => {
+    assert.strict.equal(Array.isArray(_response.body), true);
+    assert.strict.equal(_response.body.length >= lengh, true);
+});
+
+Then('the returned object id should be {string}', (id: string) => {
+    assert.strict.equal(_response.body.id, id);
+});
+
+Given('I send a DELETE request to {string}', (route: string) => {
+    _request = request(application.httpServer)
+        .delete(route);
+});
+
 BeforeAll(async () => {
     environmentArranger = arranger;
     await environmentArranger.arrange();
+    await createFakeUsers();
     application = new BackendApp();
     await application.start();
 });
@@ -49,4 +71,4 @@ AfterAll(async () => {
     await environmentArranger.arrange();
     await environmentArranger.close();
     await application.stop();
-})
+});

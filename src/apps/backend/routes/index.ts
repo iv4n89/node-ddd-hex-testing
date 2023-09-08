@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response, Router } from "express";
 import { register as statusRoute } from './status.route';
-import { register as userRoute } from './user.route';
+import { register as userRoute } from './users/user.route';
 import { ValidationError, validationResult } from 'express-validator';
 import httpStatus from "http-status";
 

@@ -1,7 +1,9 @@
+import { UserDeleteController } from "@apps/backend/controllers/users/UserDeleteController";
+import { UserGetController } from "@apps/backend/controllers/users/UserGetController";
+import { UserPutController } from "@apps/backend/controllers/users/UserPutController";
 import { Router } from "express";
-import { UserPutController } from "../controllers/UserPutController";
 import { body } from 'express-validator';
-import { validateReqSchema } from ".";
+import { validateReqSchema } from "..";
 
 const reqSchema = [
     body('id').exists().isString(),
@@ -12,5 +14,9 @@ const reqSchema = [
 
 export const register = (router: Router) => {
     const userPutController = new UserPutController();
+    const userGetController = new UserGetController();
+    const userDeleteController = new UserDeleteController();
     router.put('/users/:id', reqSchema, validateReqSchema, userPutController.run);
+    router.get('/users/:id?', userGetController.run);
+    router.delete('/users/:id', userDeleteController.run);
 }

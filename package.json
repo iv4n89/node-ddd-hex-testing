@@ -8,7 +8,7 @@
     "npm": ">=6.7.0"
   },
   "scripts": {
-    "dev:backend": "ts-node-dev --ignore-watch node_modules ./src/apps/backend/start.ts",
+    "dev:backend": "ts-node-dev -r tsconfig-paths/register --ignore-watch node_modules ./src/apps/backend/start.ts",
     "test": "npm run test:features && npm run test:unit",
     "test:features": "NODE_ENV=test cucumber-js -p backend",
     "test:unit": "NODE_ENV=test jest",

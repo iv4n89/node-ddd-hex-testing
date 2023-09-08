@@ -1,9 +1,9 @@
-import { ValueObjectTransformer } from "../../../../Shared/Infrastructure/persistence/typeorm/ValueObjectTransformer";
-import { User } from "../../../Domain/User";
-import { UserEmail } from "../../../Domain/UserEmail";
-import { UserId } from "../../../Domain/UserId";
-import { UserName } from "../../../Domain/UserName";
-import { UserPassword } from "../../../Domain/UserPassword";
+import { ValueObjectTransformer } from "@contexts/Shared/Infrastructure/persistence/typeorm/ValueObjectTransformer";
+import { User } from "@contexts/User/Domain/User";
+import { UserEmail } from "@contexts/User/Domain/UserEmail";
+import { UserId } from "@contexts/User/Domain/UserId";
+import { UserName } from "@contexts/User/Domain/UserName";
+import { UserPassword } from "@contexts/User/Domain/UserPassword";
 import { EntitySchema } from "typeorm";
 
 export const UserEntity = new EntitySchema<User>({

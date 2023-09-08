@@ -1,5 +1,5 @@
-import { AggregateRoot } from "../../../Domain/AggregateRoot";
-import { Criteria } from "../../../Domain/criteria/Criteria";
+import { AggregateRoot } from "@contexts/Shared/Domain/AggregateRoot";
+import { Criteria } from "@contexts/Shared/Domain/criteria/Criteria";
 import { Collection, MongoClient } from "mongodb";
 import { MongoCriteriaConverter } from "./MongoCriteriaConverter";
 

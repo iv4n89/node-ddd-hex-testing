@@ -1,5 +1,5 @@
-import { User } from "../../Domain/User";
-import { UserRepository } from "../../Domain/UserRepository";
+import { User } from "@contexts/User/Domain/User";
+import { UserRepository } from "@contexts/User/Domain/UserRepository";
 
 export class UserCreator {
     constructor(private repository: UserRepository) {}

@@ -1,8 +1,8 @@
-import { Nullable } from "../../../Shared/Domain/Nullable";
-import { MongoRepository } from "../../../Shared/Infrastructure/persistence/mongo/MongoRepository";
-import { User } from "../../Domain/User";
-import { UserId } from "../../Domain/UserId";
-import { UserRepository } from "../../Domain/UserRepository";
+import { Nullable } from "@contexts/Shared/Domain/Nullable";
+import { MongoRepository } from "@contexts/Shared/Infrastructure/persistence/mongo/MongoRepository";
+import { User } from "@contexts/User/Domain/User";
+import { UserId } from "@contexts/User/Domain/UserId";
+import { UserRepository } from "@contexts/User/Domain/UserRepository";
 
 interface UserDocument extends Document {
     _id: string;
