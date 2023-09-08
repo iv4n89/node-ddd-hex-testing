@@ -19,4 +19,8 @@ export class UserName extends StringValueObject {
             throw new InvalidArgumentError(`The name [${value}] can not start with a number`);
         }
     }
+
+    protected createValueObject(value: string): StringValueObject {
+        return new UserName(value);
+    }
 }

@@ -43,6 +43,10 @@ Then('the response body should contain {string} error', async (errorName: string
 
 Then('the response should not be empty', () => {
     assert.strict.notDeepEqual(_response.body, {});
+});
+
+Then('the response body should be an empty array', () => {
+    assert.strict.deepEqual(_response.body, []);
 })
 
 Then('the reponse body should be an array with length more than {int}', (lengh: number) => {
@@ -58,6 +62,18 @@ Given('I send a DELETE request to {string}', (route: string) => {
     _request = request(application.httpServer)
         .delete(route);
 });
+
+Given('I send a POST request to {string} with body:', (route: string, body: string) => {
+    _request = request(application.httpServer)
+        .post(route)
+        .send(JSON.parse(body) as object);
+});
+
+Then('the response should be:', async response => {
+    const expectedResponse = JSON.parse(response);
+    _response = await _request;
+    assert.strict.deepEqual(_response.body, expectedResponse);
+})
 
 BeforeAll(async () => {
     environmentArranger = arranger;

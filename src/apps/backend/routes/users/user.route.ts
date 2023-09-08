@@ -1,5 +1,6 @@
 import { UserDeleteController } from "@apps/backend/controllers/users/UserDeleteController";
 import { UserGetController } from "@apps/backend/controllers/users/UserGetController";
+import { UserPostController } from "@apps/backend/controllers/users/UserPostController";
 import { UserPutController } from "@apps/backend/controllers/users/UserPutController";
 import { Router } from "express";
 import { body } from 'express-validator';
@@ -16,7 +17,9 @@ export const register = (router: Router) => {
     const userPutController = new UserPutController();
     const userGetController = new UserGetController();
     const userDeleteController = new UserDeleteController();
+    const userPostController = new UserPostController();
     router.put('/users/:id', reqSchema, validateReqSchema, userPutController.run);
     router.get('/users/:id?', userGetController.run);
     router.delete('/users/:id', userDeleteController.run);
+    router.post('/users', userPostController.run);
 }
