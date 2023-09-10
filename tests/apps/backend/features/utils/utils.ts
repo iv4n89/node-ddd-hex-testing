@@ -23,7 +23,14 @@ export const createFakeUsers = async () => {
         password: 'Nomelase3.0'
     };
 
-    [userOne, userTwo, userThree].forEach(async (u) => {
+    const deleteUser = {
+        id: '1e134b34-5e0f-4faa-ae64-03a3c2380fb4',
+        name: 'delete',
+        email: 'delete@mail.com',
+        password: 'Nomelase4.0'
+    };
+
+    [userOne, userTwo, userThree, deleteUser].forEach(async (u) => {
         await userRepository.save(User.fromPrimitives({ ...u }));
     });
 }

@@ -3,7 +3,7 @@ Feature: Delete one user
     We want to provide its id to proceed
 
     Scenario: Delete one user from database
-        Given I send a DELETE request to "/users/e7719402-e7e7-4b78-bf76-e0178c513dac"
+        Given I send a DELETE request to "/users/1e134b34-5e0f-4faa-ae64-03a3c2380fb4"
         Then the response status should be 204
         And the response should be empty
 

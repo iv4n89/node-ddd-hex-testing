@@ -43,6 +43,12 @@ Feature: Search for a user
                 "password": "Nomelase1.0"
             },
             {
+                "id": "e7719402-e7e7-4b78-bf76-e0178c513dac",
+                "name": "test2",
+                "email": "test2@mail.com",
+                "password": "Nomelase2.0"
+            },
+            {
                 "id": "f2a65e1a-872d-4399-9b9e-ca5c9bb5cf25",
                 "name": "test3",
                 "email": "test3@mail.com",
